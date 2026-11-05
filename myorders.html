@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kihumuro Market | My Orders</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container navinner">
+      <a class="brand" href="index.html"><span class="brand-mark">K</span>Kihumuro Market</a>
+      <nav class="navlinks">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="products.html">Products</a>
+        <a class="active" href="myorders.html">My Orders</a>
+      </nav>
+      <div class="navactions">
+        <span class="user-profile-badge">Customer S001</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container section">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">FR3 Order Tracking</span>
+        <h2>Your Purchase History</h2>
+        <p>Logged in account identifier: <strong>John (S001)</strong></p>
+      </div>
+    </div>
+
+    <!-- Active Orders Container -->
+    <div class="orders-list-wrapper">
+      
+      <!-- Order Entry 1 (Q001) -->
+      <div class="order-transaction-card">
+        <div class="order-main-header">
+          <div>
+            <h3>Order ID: <span class="highlight-text">Q001</span></h3>
+            <p class="order-timestamp">Placed on: 2026-10-20</p>
+          </div>
+          <div>
+            <span class="status-badge status-delivered">Delivered</span>
+          </div>
+        </div>
+
+        <!-- ORDER_DETAIL Sub-Table -->
+        <div class="details-table-container">
+          <h4>Order Items Breakdown (ORDER_DETAIL)</h4>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Detail ID</th>
+                <th>Product Information</th>
+                <th>Qty</th>
+                <th>Unit Price</th>
+                <th>Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>OD001</code></td>
+                <td>Phone (W001)</td>
+                <td>1</td>
+                <td>UGX 200,000</td>
+                <td>UGX 200,000</td>
+              </tr>
+              <tr>
+                <td><code>OD002</code></td>
+                <td>Laptop computer (W002)</td>
+                <td>1</td>
+                <td>UGX 2,000,000</td>
+                <td>UGX 2,000,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="order-summary-footer">
+          <p>Managed By Employee ID: <code>E001</code></p>
+          <div class="total-financials">
+            <strong>Total Amount Paid: UGX 2,200,000</strong>
+            <small class="db-proof-note">(Matches Payment P001 verified via system rules)</small>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div class="container">
+      <span>© 2026 Kihumuro Market · Connected to Database Engine</span>
+    </div>
+  </footer>
+
+</body>
+</html>
