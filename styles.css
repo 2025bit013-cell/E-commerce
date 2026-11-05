@@ -1,0 +1,576 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+/* ==========================================================================
+   1. ROOT VARIABLES & BASE STYLES
+   ========================================================================== */
+:root {
+  --green: #176b52;
+  --deep: #123d32;
+  --lime: #d9ef8b;
+  --cream: #f7f7f1;
+  --ink: #172822;
+  --muted: #68776f;
+  --line: #e4e9e3;
+  --white: #fff;
+  --orange: #ed9b51;
+  --shadow: 0 18px 50px rgba(18, 61, 50, .09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font: 15px 'DM Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+/* ==========================================================================
+   2. LAYOUT & GLOBAL COMPONENTS
+   ========================================================================== */
+.container {
+  width: min(1160px, calc(100% - 40px));
+  margin: auto;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  font-size: 11px;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.badge {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  background: white;
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--green);
+}
+
+.text-link {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--green);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--deep);
+}
+
+.btn-light {
+  background: #edf3e9;
+  color: var(--deep);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #b9c9bd;
+  color: var(--deep);
+}
+
+/* Form Fields & Controls */
+.field {
+  display: block;
+  margin: 15px 0;
+}
+
+.field span {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 7px;
+}
+
+.field input {
+  width: 100%;
+  border: 1px solid #dbe3da;
+  border-radius: 10px;
+  padding: 13px 14px;
+  outline: none;
+}
+
+.field input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px #176b521a;
+}
+
+.select {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 10px;
+  color: var(--ink);
+}
+
+.chip {
+  border: 1px solid var(--line);
+  background: white;
+  padding: 9px 14px;
+  border-radius: 24px;
+  color: #53635b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.chip.active {
+  background: var(--deep);
+  color: white;
+  border-color: var(--deep);
+}
+
+/* ==========================================================================
+   3. NAVIGATION & HEADER
+   ========================================================================== */
+.topbar {
+  background: var(--deep);
+  color: #dcebe2;
+  font-size: 12px;
+  padding: 9px 0;
+}
+
+.topbar .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.navbar {
+  background: var(--white);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.navinner {
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: -.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--deep);
+}
+
+.brand-mark {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: var(--green);
+  color: white;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  color: #53635b;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.navlinks a:hover,
+.navlinks a.active {
+  color: var(--green);
+}
+
+.navactions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.search {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 10px 12px;
+  width: 180px;
+  background: #fbfcf9;
+}
+
+/* ==========================================================================
+   4. PAGE SECTIONS & HERO
+   ========================================================================== */
+.page-head {
+  padding: 46px 0 24px;
+}
+
+.page-title {
+  font: 700 clamp(38px, 5vw, 62px)/1.05 'Playfair Display', serif;
+  letter-spacing: -1.5px;
+  color: var(--deep);
+  margin: 15px 0;
+  font-size: 46px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin: 10px 0 24px;
+}
+
+.filter-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+/* Hero Section */
+.hero {
+  padding: 54px 0 45px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr .95fr;
+  gap: 36px;
+  align-items: center;
+}
+
+.hero h1 {
+  font: 700 clamp(38px, 5vw, 62px)/1.05 'Playfair Display', serif;
+  letter-spacing: -1.5px;
+  color: var(--deep);
+  margin: 15px 0;
+}
+
+.hero p,
+.lead {
+  color: var(--muted);
+  line-height: 1.75;
+  max-width: 520px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.hero-art {
+  min-height: 360px;
+  border-radius: 26px;
+  background: linear-gradient(140deg, #dcebc6, #f2d8b8);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+
+.hero-art:before {
+  content: '';
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: #f8f8ed;
+  right: 35px;
+  top: 38px;
+}
+
+.hero-art .basket {
+  position: relative;
+  font-size: 145px;
+  filter: drop-shadow(0 22px 14px #45613a30);
+  z-index: 1;
+}
+
+.hero-note {
+  position: absolute;
+  bottom: 23px;
+  left: 24px;
+  background: white;
+  padding: 14px 17px;
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* General Sections */
+.section {
+  padding: 32px 0 56px;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 22px;
+}
+
+.section-head h2 {
+  font: 700 32px 'Playfair Display', serif;
+  color: var(--deep);
+  margin: 7px 0 0;
+}
+
+/* ==========================================================================
+   5. CARDS & GRIDS (CATEGORIES & PRODUCTS)
+   ========================================================================== */
+/* Categories */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.category-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  padding: 22px;
+  min-height: 155px;
+  transition: .2s;
+}
+
+.category-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.category-icon {
+  font-size: 30px;
+}
+
+.category-card h3 {
+  margin: 17px 0 5px;
+  color: var(--deep);
+}
+
+.category-card p {
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Products */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  overflow: hidden;
+  transition: .2s;
+}
+
+.product-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+.product-image {
+  height: 190px;
+  display: grid;
+  place-items: center;
+  background: #edf2e7;
+  font-size: 68px;
+  position: relative;
+}
+
+.product-image.orange { background: #f8eadb; }
+.product-image.blue   { background: #e2edf0; }
+.product-image.pink   { background: #f4e6e8; }
+
+.product-info {
+  padding: 16px;
+}
+
+.product-info small {
+  color: var(--muted);
+}
+
+.product-info h3 {
+  font-size: 16px;
+  margin: 6px 0 10px;
+}
+
+.product-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--deep);
+}
+
+.add {
+  width: 34px;
+  height: 34px;
+  border: 0;
+  border-radius: 10px;
+  background: #edf3e9;
+  color: var(--green);
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Promotional Banner */
+.banner {
+  background: var(--deep);
+  color: white;
+  border-radius: 22px;
+  padding: 32px 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 24px 0 56px;
+}
+
+.banner h2 {
+  font: 700 29px 'Playfair Display', serif;
+  margin: 0 0 8px;
+}
+
+.banner p {
+  color: #c2d5ca;
+  margin: 0;
+}
+
+/* ==========================================================================
+   6. TABLES & DATA DATA
+   ========================================================================== */
+.table-wrap {
+  overflow: auto;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.orders {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 650px;
+}
+
+.orders th,
+.orders td {
+  text-align: left;
+  padding: 17px 19px;
+  border-bottom: 1px solid var(--line);
+}
+
+.orders th {
+  font-size: 11px;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: #fafbf8;
+}
+
+.orders tr:last-child td {
+  border-bottom: 0;
+}
+
+.status {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 6px 10px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.delivered  { background: #e4f4e8; color: #237447; }
+.processing { background: #fff0d9; color: #996414; }
+.pending    { background: #e7eefb; color: #375e9c; }
+
+.detail {
+  color: var(--green);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   7. AUTHENTICATION (LOGIN SHELL)
+   ========================================================================== */
+.login-shell {
+  min-height: calc(100vh - 122px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+}
+
+.login-aside {
+  background: var(--deep);
+  color: white;
+  padding: 72px max(40px, calc((100vw - 1160px) / 2));
+  padding-right: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-aside h1 {
+  font: 700 48px/1.08 'Playfair Display', serif;
+  margin: 16px 0;
+}
+
+.login-aside p {
+  color: #c2d5ca;
+  line-height: 1.8;
+  max-width: 420px;
+}
+
+.login-benefit {
+  margin-top: 26px;
+  display: flex;
+  gap: 12px;
